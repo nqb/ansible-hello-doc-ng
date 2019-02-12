@@ -3,3 +3,4 @@ apt_sources_dir: /etc/apt/sources.list.d
 deb_pkgs:
   - hello-doc-ng
   - apache2
+  - apt-transport-https
