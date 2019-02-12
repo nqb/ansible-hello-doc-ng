@@ -2,7 +2,7 @@
 - name: add hello-doc-ng public key
   apt_key:
     url: https://nqb1.gitlab.io/hello-doc-ng/GPG_PUBLIC_KEY
-    id: FE9E84327B18FF82B0378B6719CDA6A9810273C4
+    id: 6ABB81CA607AB4E1DF1DA8EF30EDD7E69E6ED82C
 
 - name: install hello-doc-ng repo from gitlab pages
   template:
