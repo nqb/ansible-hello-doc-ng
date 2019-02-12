@@ -9,6 +9,11 @@
     src: hello-doc-ng.j2
     dest: "{{ apt_sources_dir }}/hello-doc-ng.list"
 
+- name: install apt-transport-https
+  apt:
+    name: apt-transport-https
+    state: latest
+    
 # to take new key and repo(s) into account
 - name: install apache and hello-doc-ng from repo
   apt:
