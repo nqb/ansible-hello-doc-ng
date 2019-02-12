@@ -7,6 +7,7 @@
 - name: install hello-doc-ng repo from gitlab pages
   yum_repository:
     name: hello-doc-ng
+    description: hello-doc-ng repo
     baseurl: http://nqb1.gitlab.io/hello-doc-ng/$releasever/$basearch
     enabled: yes
     gpgcheck: yes
