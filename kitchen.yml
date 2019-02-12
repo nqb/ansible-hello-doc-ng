@@ -1,0 +1,50 @@
+---
+driver:
+  name: docker
+
+platforms:
+  - name: centos
+    driver_config:
+      image: centos:7
+      platform: centos
+      # forward: 8080:80
+      # forward public port 8080 to 80
+      require_chef_omnibus: false # don't install chef in containers
+      use_sudo: true # docker commands use sudo (necessary for local socket)
+
+  - name: debian
+    driver_config:
+      image: debian:9
+      platform: debian
+      # forward: 8081:80
+      require_chef_omnibus: false # don't install chef in containers
+      use_sudo: true # docker commands use sudo (necessary for local socket)
+
+        
+provisioner:
+  name: ansible_playbook
+  hosts: test-kitchen    # add 'test-kitchen' host in inventory file
+  require_chef_for_busser: false # don't install Chef for Busser tests
+  playbook: default.yml # playbook in root directory
+
+verifier:
+  name: inspec
+  # not necessary when test run locally
+  sudo: false
+  
+suites:
+  # default suite
+  - name: default
+    # run_list:
+    #   - default.yml
+    # verifier:
+    #   inspec_tests:
+    #     - test/integration/default
+    # attributes:
+  # - name: nginx
+    # run_list:
+    #   - nginx.yml
+    # verifier:
+    #   inspec_tests:
+    #     - test/integration/nginx
+    # attributes:

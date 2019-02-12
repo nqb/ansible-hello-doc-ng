@@ -1,0 +1,8 @@
+---
+# tasks file for hello-doc-ng.install
+- name: import distribution specific variables
+  include_vars: "{{ ansible_os_family|lower }}.yml"
+
+# include in place of import (dynamic evaluation)
+- name: include distribution specific tasks
+  include_tasks: "{{ ansible_os_family|lower }}.yml"

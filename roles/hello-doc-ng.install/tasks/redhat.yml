@@ -1,0 +1,22 @@
+---
+- name: add hello-doc-ng public key
+  rpm_key: 
+    state: present
+    key: https://nqb1.gitlab.io/hello-doc-ng/GPG_PUBLIC_KEY
+
+- name: install hello-doc-ng repo from gitlab pages
+  yum_repository:
+    name: hello-doc-ng
+    baseurl: http://nqb1.gitlab.io/hello-doc-ng/$releasever/$basearch
+    enabled: yes
+    gpgcheck: yes
+    gpgkey: http://nqb1.gitlab.io/hello-doc-ng/GPG_PUBLIC_KEY
+    metadata_expire: 900
+    skip_if_unavailable: no
+    repo_gpgcheck: no
+
+- name: install hello-doc-ng from repo
+  yum:
+    name: "{{ rpm_pkgs }}"
+    update_cache: yes
+    state: latest

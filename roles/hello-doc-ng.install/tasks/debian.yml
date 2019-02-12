@@ -1,0 +1,17 @@
+---
+- name: add hello-doc-ng public key
+  apt_key:
+    url: https://nqb1.gitlab.io/hello-doc-ng/GPG_PUBLIC_KEY
+    id: FE9E84327B18FF82B0378B6719CDA6A9810273C4
+
+- name: install hello-doc-ng repo from gitlab pages
+  template:
+    src: hello-doc-ng.j2
+    dest: "{{ apt_sources_dir }}/hello-doc-ng.list"
+
+# to take new key and repo(s) into account
+- name: install apache and hello-doc-ng from repo
+  apt:
+    name: "{{ deb_pkgs }}"
+    update_cache: yes
+    state: latest

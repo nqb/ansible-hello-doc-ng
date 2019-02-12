@@ -1,0 +1,4 @@
+---
+rpm_pkgs:
+  - hello-doc-ng
+  - httpd
