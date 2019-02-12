@@ -8,7 +8,7 @@
   yum_repository:
     name: hello-doc-ng
     description: hello-doc-ng repo
-    baseurl: http://nqb1.gitlab.io/hello-doc-ng/$releasever/$basearch
+    baseurl: http://nqb1.gitlab.io/hello-doc-ng/centos/$releasever/$basearch
     enabled: yes
     gpgcheck: yes
     gpgkey: http://nqb1.gitlab.io/hello-doc-ng/GPG_PUBLIC_KEY
