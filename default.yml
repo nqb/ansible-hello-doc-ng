@@ -1,4 +1,0 @@
----
-- hosts: test-kitchen
-  roles:
-    - hello-doc-ng.install
