@@ -16,8 +16,14 @@
     skip_if_unavailable: no
     repo_gpgcheck: no
 
-- name: install hello-doc-ng from repo
+- name: install httpd and hello-doc-ng from repo
   yum:
     name: "{{ rpm_pkgs }}"
     update_cache: yes
     state: latest
+
+- name: enable and start httpd
+  service:
+    name: httpd
+    enabled: yes
+    state: started
