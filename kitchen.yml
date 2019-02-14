@@ -5,14 +5,14 @@ driver:
 platforms:
   - name: centos
     driver_config:
-      image: docker-centos7-ansible
+      image: geerlingguy/docker-centos7-ansible
       platform: centos
       require_chef_omnibus: false # don't install chef in containers
       use_sudo: true # docker commands use sudo (necessary for local socket)
 
   - name: debian
     driver_config:
-      image: docker-debian9-ansible
+      image: geerlingguy/docker-debian9-ansible
       platform: debian
       require_chef_omnibus: false # don't install chef in containers
       use_sudo: true # docker commands use sudo (necessary for local socket)
