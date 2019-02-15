@@ -1,0 +1,15 @@
+stage: test
+
+kitchen_debian:
+  stage: test
+  script:
+    - kitchen test debian
+  tags:
+    - futura
+
+kitchen_centos:
+  stage: test
+  script:
+    - kitchen test centos
+  tags:
+    - futura
