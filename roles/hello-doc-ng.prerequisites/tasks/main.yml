@@ -1,0 +1,6 @@
+---
+# tasks file for hello-doc-ng.prerequisites
+- name: ensure gpg is installed
+  package:
+    name: gnupg
+    state: latest

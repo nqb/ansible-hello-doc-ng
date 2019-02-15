@@ -1,0 +1,6 @@
+---
+- name: hello-doc-ng.install suite
+  hosts: test-kitchen
+  roles:
+    - hello-doc-ng.prerequisites
+    - hello-doc-ng.install

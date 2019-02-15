@@ -1,0 +1,5 @@
+---
+- name: hello-doc-ng.prerequisites suite
+  hosts: test-kitchen
+  roles:
+    - hello-doc-ng.prerequisites
