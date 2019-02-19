@@ -3,6 +3,7 @@
 # test installation of hello-doc-ng
 describe package('hello-doc-ng') do
   it { should be_installed }
+  its('version') { should match /1.8/ }
 end
 
 # test apache is running
