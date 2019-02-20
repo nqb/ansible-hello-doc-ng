@@ -4,7 +4,7 @@ stages:
 kitchen_debian:
   stage: test
   script:
-    - sleep 150
+    - sleep 250
     - kitchen test debian
   tags:
     - futura
