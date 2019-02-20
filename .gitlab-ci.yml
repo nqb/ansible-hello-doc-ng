@@ -12,6 +12,7 @@ kitchen_debian:
 kitchen_centos:
   stage: test
   script:
+    - sleep 60
     - kitchen test centos
   tags:
     - futura
